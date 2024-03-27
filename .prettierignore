@@ -1,0 +1,19 @@
+.npmrc
+**/src/uni_modules/
+**/src/wxcomponents/
+**/*.md
+
+# IDE与编辑器忽略
+**/.idea/
+**/.vscode/
+**/.hbuilderx/
+
+# config file
+*.config.js
+
+# custom
+**/auto-import.d.ts
+**/ucharts
+**/tsconfig.json
+**/turbo.json
+**/xz-*/

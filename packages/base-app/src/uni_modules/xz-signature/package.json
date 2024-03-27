@@ -1,0 +1,20 @@
+{
+    "id": "xz-signature",
+    "name": "Canvas签名 支持原生-2d 横竖屏随意切换 功能丰富 小程序-APP-H5",
+    "displayName": "Canvas签名 支持原生-2d 横竖屏随意切换 功能丰富 小程序-APP-H5",
+    "version": "0.0.3",
+    "description": "支持横竖屏切换、签名背景色、笔画大小更改、签名提示、手动导出等功能，回显与导出均为BASE64格式，基于typescript编写，需要有ts依赖",
+    "keywords": [
+        "签名",
+        "signature",
+        "Canvas",
+        "typescript",
+        "2d"
+    ],
+    "dcloudext": {
+        "category": [
+            "前端组件",
+            "通用组件"
+        ]
+    }
+}

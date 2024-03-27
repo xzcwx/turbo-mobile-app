@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "baseUrl": "./",
+    "target": "ESNext",
+    "module": "ESNext",
+    "strict": true,
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "useDefineForClassFields": true,
+    "lib": [
+      "ESNext",
+      "dom"
+    ],
+    "paths": {
+      "@": [
+        "packages/agent-app/src/*"
+      ],
+      "@/*": [
+        "packages/agent-app/src/*"
+      ],
+      "@main": [
+        "packages/agent-app/src/package/main"
+      ],
+      "@main/*": [
+        "packages/agent-app/src/package/main"
+      ],
+      "@sundry": [
+        "packages/agent-app/src/package/sundry"
+      ],
+      "@sundry/*": [
+        "packages/agent-app/src/package/sundry"
+      ]
+    },
+    "types": [
+      "@dcloudio/types",
+      "@types/node",
+      "@types/weixin-app"
+    ]
+  },
+  "include": [
+    "packages/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/dist"
+  ]
+}

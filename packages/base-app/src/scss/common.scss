@@ -1,0 +1,137 @@
+/**
+ * 命名规范：
+ *  - gb 前缀为全局统一样式
+ *  - uni 前缀或<标签选择器>为更改组件库默认样式
+ */
+
+@import "@/uni.scss";
+
+// 特殊兼容全局变量
+page {
+  --primary-color: #{$primary-color};
+  --dark-primary-color: #{$dark-primary-color};
+}
+
+page {
+  padding: 0;
+  margin: 0;
+  background: #F7F8FA;
+}
+
+// 文本溢出
+text[data-oneline] {
+  @include textHidden(1)
+}
+
+text[data-twoline] {
+  @include textHidden(2)
+}
+
+text[data-threeline] {
+  @include textHidden(3)
+}
+
+// 按钮
+button[type=primary] {
+  color: #FFF;
+  background-color: $primary-color;
+}
+
+button[disabled][type=primary] {
+  background-color: $shallow-primary-color;
+}
+
+.button-hover[type=primary] {
+  background-color: $dark-primary-color;
+}
+
+// - 按钮镂空
+button[plain] {
+  background-color: #FFF;
+}
+
+button[type=primary][plain] {
+  border-color: $primary-color;
+  color: $primary-color;
+  background-color: #FFF;
+}
+
+button[plain][disabled][type=primary] {
+  color: $shallow-primary-color;
+  border-color: $shallow-primary-color;
+  background-color: rgba(255, 255, 255, $uni-opacity-disabled);
+}
+
+.button-hover[plain][type=primary] {
+  color: $dark-primary-color;
+  border-color: $dark-primary-color;
+  background-color: #FFF;
+}
+
+// - 方形按钮
+button[data-square] {
+  border-radius: 0;
+
+  &::after {
+    border-radius: 0;
+  }
+}
+
+// - 按钮边框
+button[data-unborder] {
+  border: none !important;
+
+  &::after {
+    border: none !important;
+  }
+}
+
+// 表单元素：输入框、复选框、单选框、文本框
+input, textarea, .uni-select__input-text,
+.checklist-box .checklist-text {
+  color: $uni-text-color !important;
+  font-size: $uni-font-size-base;
+}
+
+.input-placeholder, .textarea-placeholder, .uni-select__input-placeholder, {
+  color: $uni-text-color-placeholder !important;
+  font-size: $uni-font-size-base !important;
+}
+
+input[disabled], textarea[disabled], .uni-select--disabled,
+.checklist-box.is--default.is-disable .checklist-text {
+  color: $uni-text-color-disable !important;
+  font-size: $uni-font-size-base;
+}
+
+// 全局表单按钮
+.gb-form-btn {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-bottom: env(safe-area-inset-bottom, 0);
+  background-color: #FFF;
+
+  &.form-btn[data-nofixed] {
+    position: relative;
+  }
+
+  button {
+    flex: 1;
+  }
+
+  button + button {
+    &::after {
+      border-left: none;
+    }
+  }
+}
+
+
+
+

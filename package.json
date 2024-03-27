@@ -1,0 +1,32 @@
+{
+  "name": "plus-agent-app",
+  "version": "2.0.0",
+  "description": "",
+  "private": true,
+  "workspaces": [
+    "app/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "start:baseoem": "turbo run dev:h5 --continue",
+    "start:h5": "turbo run dev:h5 --continue",
+    "start:app": "turbo run dev:app --continue",
+    "start:weixin": "turbo run dev:mp-weixin --continue",
+    "prepare": "husky"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "packageManager": "pnpm@8.11.0",
+  "devDependencies": {
+    "@commitlint/cli": "^17.8.1",
+    "@commitlint/config-conventional": "^17.8.1",
+    "@dcloudio/types": "^3.3.2",
+    "@types/weixin-app": "^2.9.7",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "turbo": "^1.10.13",
+    "husky": "^9.0.11",
+    "lint-staged": "^13.3.0"
+  }
+}

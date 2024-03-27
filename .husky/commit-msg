@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+HAS_PNPM=true
+
+# 调试等待
+function _wait() {
+    echo -e "\033[1;32m按任意键继续~\033[0m"
+    read -r -n 1
+}
+
+# 检查提交信息规范
+function checkCommitMsg() {
+    echo "正在执行提交信息格式检查, 当前提交信息为：$(cat "$1")"
+    if $HAS_PNPM; then
+        pnpm exec commitlint --edit "$1"
+    else
+        npx --no-install commitlint --edit "$1"
+    fi
+}
+
+# 格式化脚本
+function formatCode() {
+    echo "正在执行暂存区文件语法检测与格式处理~"
+    if $HAS_PNPM; then
+        pnpm exec lint-staged
+    else
+        npx --no-install lint-staged
+    fi
+}
+
+function execute() {
+    if ! command pnpm -v pnpm &>/dev/null; then
+        HAS_PNPM=false
+        echo -e '\033[1;31m警告Warn：请使用pnpm作为包管理工具，具体版本详情请查阅package.json文件下packageManager字段，已降级使用NPM！\033[0m'
+    fi
+
+    checkCommitMsg "$@"
+    formatCode "$@"
+    # DEBUG on-off
+    # _wait
+}
+
+execute "$@"

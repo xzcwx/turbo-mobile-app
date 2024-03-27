@@ -1,0 +1,9 @@
+dist/
+node_modules/
+**/uni_modules/
+**/src/wxcomponents/
+index.html
+vite.config.ts
+
+# custom
+**/ucharts

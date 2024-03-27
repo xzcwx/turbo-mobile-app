@@ -1,0 +1,8 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "dev:app": {},
+    "dev:h5": {},
+    "dev:mp-weixin": {}
+  }
+}

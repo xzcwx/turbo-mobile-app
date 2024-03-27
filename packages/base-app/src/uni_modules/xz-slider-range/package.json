@@ -1,0 +1,19 @@
+{
+    "id": "xz-slider-range",
+    "name": "xz-slider-range 范围滑块 支持单、双范围切换 可自定义强",
+    "displayName": "xz-slider-range 范围滑块 支持单、双范围切换 可自定义强",
+    "version": "0.0.1",
+    "description": "一款功能丰富的范围滑块组件，单、双范围随意切换，功能强大且可自定义性强，基于Typescript编写，需要有ts依赖",
+    "keywords": [
+        "slider",
+        "slider-range",
+        "滑块",
+        "typescript"
+    ],
+    "dcloudext": {
+        "category": [
+            "前端组件",
+            "通用组件"
+        ]
+    }
+}
