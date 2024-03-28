@@ -21,10 +21,11 @@ module.exports = [
       "vue/no-reserved-component-names": "off",
       "vue/multi-word-component-names": "off",
       "no-use-before-define": "off",
+      "no-useless-escape": "off",
       "space-before-function-paren": "off",
-      "quotes": ["error", "double"],
+      "quotes": "off",
       "allowTemplateLiterals": "off",
-      "comma-dangle": ["error", "never"],
+      "comma-dangle": "warn",
       "prefer-const": "warn",
       "@typescript-eslint/no-namespace": "warn",
       "@typescript-eslint/ban-ts-ignore": "off",
@@ -37,6 +38,7 @@ module.exports = [
       "@typescript-eslint/ban-types": "off",
       "@typescript-eslint/no-non-null-assertion": "off",
       "@typescript-eslint/explicit-module-boundary-types": "off",
+      "@typescript-eslint/no-import-type-side-effects": "off",
       "@typescript-eslint/no-unused-vars": [
         "warn",
         {

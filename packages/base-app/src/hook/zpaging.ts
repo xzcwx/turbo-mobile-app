@@ -1,4 +1,4 @@
-import { ComponentPublicInstance } from "vue";
+import type { ComponentPublicInstance } from "vue";
 
 declare type Component = Record<string, ComponentPublicInstance<any>>;
 

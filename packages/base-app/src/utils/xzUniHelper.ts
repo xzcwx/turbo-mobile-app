@@ -6,7 +6,7 @@ import { format, formatDistanceToNow, compareAsc, add } from "date-fns";
 // @ts-ignore
 import { zhCN } from "date-fns/locale";
 
-import {
+import type {
   NodeField,
   NodeInfo,
   ConfirmHintOpts,
@@ -184,7 +184,7 @@ export function getDomNodes(
       .createSelectorQuery()
       .in(range)
       .select(target)
-      .fields(opts, (node: NodeInfo) => {
+      .fields(opts, (node) => {
         resolve(node as NodeInfo);
       })
       .exec();
