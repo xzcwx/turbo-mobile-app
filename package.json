@@ -1,32 +1,46 @@
 {
-  "name": "plus-agent-app",
-  "version": "2.0.0",
+  "name": "turbo-finance-app",
+  "version": "0.0.0",
   "description": "",
   "private": true,
   "workspaces": [
-    "app/*",
+    "apps/*",
     "packages/*"
   ],
   "scripts": {
-    "start:baseoem": "turbo run dev:h5 --continue",
-    "start:h5": "turbo run dev:h5 --continue",
-    "start:app": "turbo run dev:app --continue",
-    "start:weixin": "turbo run dev:mp-weixin --continue",
+    "start": "turbo run dev:h5 --continue --filter=@turbo-finance-app/base-app",
+    "build": "turbo run build:mp-weixin --continue --filter=@turbo-finance-app/base-app",
+    "start:baseapp": "turbo run dev:h5 --continue --filter=@turbo-finance-app/base-app",
+    "build:baseapp": "turbo run build:mp-weixin --continue --filter=@turbo-finance-app/base-app",
+    "start:baseapp:wechat": "turbo run dev:h5 --continue --filter=@turbo-finance-app/base-app",
+    "build:baseapp:wechat": "turbo run build:mp-weixin --continue --filter=@turbo-finance-app/base-app",
+    "start:baseapp:app": "turbo run dev:app --continue --filter=@turbo-finance-app/base-app",
+    "build:baseapp:app": "turbo run build:app --continue --filter=@turbo-finance-app/base-app",
     "prepare": "husky"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "packageManager": "pnpm@8.11.0",
+  "dependencies": {
+    "@turbo-finance-app/base-app": "workspace:*"
+  },
   "devDependencies": {
     "@commitlint/cli": "^17.8.1",
     "@commitlint/config-conventional": "^17.8.1",
-    "@dcloudio/types": "^3.3.2",
-    "@types/weixin-app": "^2.9.7",
+    "@eslint/js": "^8.57.0",
+    "@vue/eslint-config-typescript": "^13.0.0",
     "eslint": "^8.57.0",
-    "prettier": "^3.2.5",
-    "turbo": "^1.10.13",
+    "eslint-plugin-vue": "^9.24.0",
+    "globals": "^15.0.0",
     "husky": "^9.0.11",
-    "lint-staged": "^13.3.0"
+    "lint-staged": "^13.3.0",
+    "prettier": "^3.2.5",
+    "turbo": "^1.13.0",
+    "typescript-eslint": "^7.4.0"
+  },
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=7"
   }
 }

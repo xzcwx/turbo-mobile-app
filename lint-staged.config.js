@@ -3,7 +3,7 @@ module.exports = {
     "eslint --fix",
     "prettier --write"
   ],
-  "package.json": [
+  "{package,tsconfig}.json": [
     "prettier --write --parser json"
   ]
 };

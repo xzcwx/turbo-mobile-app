@@ -11,6 +11,7 @@ function _wait() {
 # 检查提交信息规范
 function checkCommitMsg() {
     echo "正在执行提交信息格式检查, 当前提交信息为：$(cat "$1")"
+    echo -e "\033[1;32m提交规范文档请参考：https://www.conventionalcommits.org/en/v1.0.0/\033[0m"
     if $HAS_PNPM; then
         pnpm exec commitlint --edit "$1"
     else
@@ -28,15 +29,24 @@ function formatCode() {
     fi
 }
 
+# Git 暂存区、工作区备份处理
+function backups() {
+    local msg
+    msg="在进行提交之前于 $(date +"%Y-%m-%d %H:%M:%S") 进行了更改"
+    git stash push -m "$msg"
+    git stash apply 0
+}
+
 function execute() {
     if ! command pnpm -v pnpm &>/dev/null; then
         HAS_PNPM=false
         echo -e '\033[1;31m警告Warn：请使用pnpm作为包管理工具，具体版本详情请查阅package.json文件下packageManager字段，已降级使用NPM！\033[0m'
     fi
-
+    # 备份操作先执行
+    backups
     checkCommitMsg "$@"
     formatCode "$@"
-    # DEBUG on-off
+    # DEBUG on-off👇
     # _wait
 }
 

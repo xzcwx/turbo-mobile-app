@@ -3,8 +3,8 @@ module.exports = {
   "tabWidth": 2,
   "useTabs": false,
   "semi": true,
-  "vueIndentScriptAndStyle": true,
   "singleQuote": false,
+  "jsxSingleQuote": false,
   "quoteProps": "as-needed",
   "bracketSpacing": true,
   "trailingComma": "none",
@@ -15,5 +15,6 @@ module.exports = {
   "htmlWhitespaceSensitivity": "strict",
   "bracketSameLine": true,
   "singleAttributePerLine": true,
+  "vueIndentScriptAndStyle": true,
   "endOfLine": "lf"
 }

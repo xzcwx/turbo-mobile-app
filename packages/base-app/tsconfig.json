@@ -2,14 +2,49 @@
   "extends": "@vue/tsconfig/tsconfig.json",
   "compilerOptions": {
     "sourceMap": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
     "target": "ES2020",
+    "module": "ES2020",
     "moduleResolution": "node",
+    "esModuleInterop": true,
+    // 启用装饰器语法
+    "experimentalDecorators": true,
+    // 为装饰器提供元数据的支持
+    "emitDecoratorMetadata": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "@": [
+        "packages/agent-app/src/*"
+      ],
+      "@/*": [
+        "packages/agent-app/src/*"
+      ],
+      "@main": [
+        "packages/agent-app/src/package/main"
+      ],
+      "@main/*": [
+        "packages/agent-app/src/package/main"
+      ],
+      "@sundry": [
+        "packages/agent-app/src/package/sundry"
+      ],
+      "@sundry/*": [
+        "packages/agent-app/src/package/sundry"
+      ]
     },
-    "lib": ["esnext", "dom"],
-    "types": ["@dcloudio/types"]
+    "types": [
+      "@dcloudio/types",
+      "@types/node",
+      "@types/weixin-app"
+    ],
+    "lib": [
+      "esnext",
+      "dom"
+    ]
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue"
+  ]
 }

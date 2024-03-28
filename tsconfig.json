@@ -10,35 +10,11 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "useDefineForClassFields": true,
-    "lib": [
-      "ESNext",
-      "dom"
-    ],
-    "paths": {
-      "@": [
-        "packages/agent-app/src/*"
-      ],
-      "@/*": [
-        "packages/agent-app/src/*"
-      ],
-      "@main": [
-        "packages/agent-app/src/package/main"
-      ],
-      "@main/*": [
-        "packages/agent-app/src/package/main"
-      ],
-      "@sundry": [
-        "packages/agent-app/src/package/sundry"
-      ],
-      "@sundry/*": [
-        "packages/agent-app/src/package/sundry"
-      ]
-    },
-    "types": [
-      "@dcloudio/types",
-      "@types/node",
-      "@types/weixin-app"
-    ]
+    // 启用装饰器语法
+    "experimentalDecorators": true,
+    // 为装饰器提供元数据的支持
+    "emitDecoratorMetadata": true,
+    "lib": ["ESNext", "dom"]
   },
   "include": [
     "packages/**/*"

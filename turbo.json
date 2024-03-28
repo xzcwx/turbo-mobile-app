@@ -1,8 +1,32 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
-    "dev:app": {},
-    "dev:h5": {},
-    "dev:mp-weixin": {}
+    "dev:h5": {
+      "cache": false,
+      "persistent": true
+    },
+    "dev:mp-weixin": {
+      "cache": false,
+      "persistent": true
+    },
+    "dev:app": {
+      "cache": false,
+      "persistent": true
+    },
+    "build:h5": {
+      "cache": true,
+      "dependsOn": ["build:h5"]
+    },
+    "build:mp-weixin": {
+      "cache": true,
+      "dependsOn": ["build:mp-weixin"]
+    },
+    "build:app": {
+      "cache": true,
+      "dependsOn": ["build:app"]
+    },
+    "husky": {
+      "cache": false
+    }
   }
 }

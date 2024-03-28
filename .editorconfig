@@ -19,7 +19,7 @@ indent_size = 2
 
 [*.{cjs,mjs,js,jsx,ts,tsx}]
 indent_size = 2
-max_line_length = 80
+max_line_length = 100
 tab_width = 2
 
 # 在Markdown文档中，换行符前删除空格以确保语法准确
