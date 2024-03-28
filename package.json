@@ -1,5 +1,5 @@
 {
-  "name": "turbo-finance-app",
+  "name": "turbo-uniapp-app",
   "version": "0.0.0",
   "description": "",
   "private": true,
@@ -8,14 +8,14 @@
     "packages/*"
   ],
   "scripts": {
-    "start": "turbo run dev:h5 --continue --filter=@turbo-finance-app/base-app",
-    "build": "turbo run build:mp-weixin --continue --filter=@turbo-finance-app/base-app",
-    "start:baseapp": "turbo run dev:h5 --continue --filter=@turbo-finance-app/base-app",
-    "build:baseapp": "turbo run build:mp-weixin --continue --filter=@turbo-finance-app/base-app",
-    "start:baseapp:wechat": "turbo run dev:h5 --continue --filter=@turbo-finance-app/base-app",
-    "build:baseapp:wechat": "turbo run build:mp-weixin --continue --filter=@turbo-finance-app/base-app",
-    "start:baseapp:app": "turbo run dev:app --continue --filter=@turbo-finance-app/base-app",
-    "build:baseapp:app": "turbo run build:app --continue --filter=@turbo-finance-app/base-app",
+    "start": "turbo run dev:h5 --continue --filter=@turbo-uniapp-app/base-app",
+    "build": "turbo run build:mp-weixin --continue --filter=@turbo-uniapp-app/base-app",
+    "start:baseapp": "turbo run dev:h5 --continue --filter=@turbo-uniapp-app/base-app",
+    "build:baseapp": "turbo run build:mp-weixin --continue --filter=@turbo-uniapp-app/base-app",
+    "start:baseapp:wechat": "turbo run dev:h5 --continue --filter=@turbo-uniapp-app/base-app",
+    "build:baseapp:wechat": "turbo run build:mp-weixin --continue --filter=@turbo-uniapp-app/base-app",
+    "start:baseapp:app": "turbo run dev:app --continue --filter=@turbo-uniapp-app/base-app",
+    "build:baseapp:app": "turbo run build:app --continue --filter=@turbo-uniapp-app/base-app",
     "prepare": "husky"
   },
   "keywords": [],
@@ -23,7 +23,7 @@
   "license": "MIT",
   "packageManager": "pnpm@8.11.0",
   "dependencies": {
-    "@turbo-finance-app/base-app": "workspace:*"
+    "@turbo-uniapp-app/base-app": "workspace:*"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.8.1",

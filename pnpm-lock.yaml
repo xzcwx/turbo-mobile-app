@@ -8,7 +8,7 @@ importers:
 
   .:
     dependencies:
-      '@turbo-finance-app/base-app':
+      '@turbo-uniapp-app/base-app':
         specifier: workspace:*
         version: link:packages/base-app
     devDependencies:
