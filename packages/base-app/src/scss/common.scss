@@ -6,16 +6,13 @@
 
 @import "@/uni.scss";
 
-// 特殊兼容全局变量
 page {
+  // 全局特殊变量
   --primary-color: #{$primary-color};
   --dark-primary-color: #{$dark-primary-color};
-}
-
-page {
   padding: 0;
   margin: 0;
-  background: #F7F8FA;
+  background: #{$page-bg-color};
 }
 
 // 文本溢出

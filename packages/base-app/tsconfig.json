@@ -12,24 +12,12 @@
     // 为装饰器提供元数据的支持
     "emitDecoratorMetadata": true,
     "paths": {
-      "@": [
-        "packages/agent-app/src/*"
-      ],
-      "@/*": [
-        "packages/agent-app/src/*"
-      ],
-      "@main": [
-        "packages/agent-app/src/package/main"
-      ],
-      "@main/*": [
-        "packages/agent-app/src/package/main"
-      ],
-      "@sundry": [
-        "packages/agent-app/src/package/sundry"
-      ],
-      "@sundry/*": [
-        "packages/agent-app/src/package/sundry"
-      ]
+      "@": ["./src/*"],
+      "@/*": ["./src/*"],
+      "@main": ["./src/packages/main"],
+      "@main/*": ["./src/packages/main"],
+      "@sundry": ["./src/packages/sundry"],
+      "@sundry/*": ["./src/packages/sundry"]
     },
     "types": [
       "@dcloudio/types",

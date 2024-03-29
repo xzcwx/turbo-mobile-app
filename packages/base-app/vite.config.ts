@@ -13,7 +13,8 @@ export default defineConfig({
     //设置别名
     alias: {
       "@": path.resolve(__dirname, "src"),
-      "@main": path.resolve(__dirname, "src/package/main")
+      "@main": path.resolve(__dirname, "src/packages/main"),
+      "@sundry": path.resolve(__dirname, "src/packages/sundry")
     }
   }
 });

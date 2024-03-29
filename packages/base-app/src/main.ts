@@ -1,11 +1,14 @@
+/* Base Import Here */
 import { createSSRApp } from "vue";
 import App from "./App.vue";
 import * as Pinia from "pinia";
 
+/* Config Import Here */
 import { PACKAGE_MAP } from "@/config/launch";
 import { Router } from "@/utils/xzUniHelper";
 
 /* Global Components Import Here */
+
 
 
 export function createApp() {
@@ -13,8 +16,6 @@ export function createApp() {
   const store = Pinia.createPinia();
 
   app.use(store);
-
-
   return { app, Pinia };
 }
 

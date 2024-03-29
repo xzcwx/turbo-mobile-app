@@ -9,10 +9,13 @@ export const PRIVACY_TYPE = "privacy";
 // 信息收集与使用清单
 export const GATHER_TYPE = "gather";
 
+// sdk协议富文本
 export const sdk = `
 `;
+// 隐私协议富文本
 export const privacy = `
 `;
+// 信息收集条款富文本
 export const gather = `
 `;
 
