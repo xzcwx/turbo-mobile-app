@@ -1,3 +1,35 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
+source .husky/_base
 
-# pnpm test
+# 格式化脚本
+function formatCode() {
+    echo -e '\033[1;32m正在执行暂存区文件语法检测与格式处理~\033[0m'
+    if $HAS_PNPM; then
+        pnpm exec lint-staged
+    else
+        npx --no-install lint-staged
+    fi
+}
+
+# Git 暂存区、工作区备份处理
+function backups() {
+    echo -e '\033[1;32m正在执行暂存区、工作区备份处理~\033[0m'
+    local msg
+    msg="在进行提交之前于 $(date +"%Y-%m-%d %H:%M:%S") 进行了更改"
+
+    # 是否存在初始化提交
+    if ! git show-ref --quiet &>/dev/null; then
+        echo '\033[1;31m暂未进行初始化提交，将忽略本次备份~\033[0m'
+        return 0
+    fi
+    git stash push -m "$msg"
+    git stash apply &>/dev/null
+}
+
+function main() {
+    # 备份操作先执行
+    backups
+    formatCode "$@"
+}
+
+execute main "$@"
