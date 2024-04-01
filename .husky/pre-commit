@@ -19,7 +19,7 @@ function backups() {
 
     # 是否存在初始化提交
     if ! git show-ref --quiet &>/dev/null; then
-        echo '\033[1;31m暂未进行初始化提交，将忽略本次备份~\033[0m'
+        echo -e '\033[1;31m暂未进行初始化提交，将忽略本次备份~\033[0m'
         return 0
     fi
     git stash push -m "$msg"
