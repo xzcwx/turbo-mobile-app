@@ -5,11 +5,27 @@
       "cache": false,
       "persistent": true
     },
+    "dev:app": {
+      "cache": false,
+      "persistent": true
+    },
     "dev:mp-weixin": {
       "cache": false,
       "persistent": true
     },
-    "dev:app": {
+    "dev:mp-alipay": {
+      "cache": false,
+      "persistent": true
+    },
+    "dev:mp-toutiao": {
+      "cache": false,
+      "persistent": true
+    },
+    "dev:mp-kuaishou": {
+      "cache": false,
+      "persistent": true
+    },
+    "dev:mp-lark": {
       "cache": false,
       "persistent": true
     },
@@ -17,13 +33,29 @@
       "cache": true,
       "dependsOn": ["build:h5"]
     },
+    "build:app": {
+      "cache": true,
+      "dependsOn": ["build:app"]
+    },
     "build:mp-weixin": {
       "cache": true,
       "dependsOn": ["build:mp-weixin"]
     },
-    "build:app": {
+    "build:mp-alipay": {
       "cache": true,
-      "dependsOn": ["build:app"]
+      "dependsOn": ["build:mp-alipay"]
+    },
+    "build:mp-toutiao": {
+      "cache": true,
+      "dependsOn": ["build:mp-toutiao"]
+    },
+    "build:mp-kuaishou": {
+      "cache": true,
+      "dependsOn": ["build:mp-kuaishou"]
+    },
+    "build:mp-lark": {
+      "cache": true,
+      "dependsOn": ["build:mp-lark"]
     },
     "husky": {
       "cache": false

@@ -1,3 +1,9 @@
+# common
+.DS_Store
+*.local
+**/node_modules
+dist/
+
 # Logs
 logs
 *.log
@@ -6,11 +12,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-
-**/node_modules
-.DS_Store
-dist
-*.local
 
 # IDE与编辑器忽略
 **/.idea

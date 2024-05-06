@@ -3,23 +3,24 @@
   "version": "0.0.0",
   "description": "",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
+  "workspaces": ["apps/*", "packages/*"],
   "scripts": {
     "start": "turbo run dev:h5 --continue --filter=@turbo-mobile-app/base-app",
     "build": "turbo run build:mp-weixin --continue --filter=@turbo-mobile-app/base-app",
-    "start:baseapp": "turbo run dev:h5 --continue --filter=@turbo-mobile-app/base-app",
-    "build:baseapp": "turbo run build:h5 --continue --filter=@turbo-mobile-app/base-app",
-    "start:baseapp:wechat": "turbo run dev:mp-weixin --continue --filter=@turbo-mobile-app/base-app",
-    "build:baseapp:wechat": "turbo run build:mp-weixin --continue --filter=@turbo-mobile-app/base-app",
-    "start:baseapp:app": "turbo run dev:app --continue --filter=@turbo-mobile-app/base-app",
-    "build:baseapp:app": "turbo run build:app --continue --filter=@turbo-mobile-app/base-app",
+    "start:wechat": "turbo run dev:mp-weixin --continue --filter=@turbo-mobile-app/base-app",
+    "build:wechat": "turbo run build:mp-weixin --continue --filter=@turbo-mobile-app/base-app",
+    "start:app": "turbo run dev:app --continue --filter=@turbo-mobile-app/base-app",
+    "build:app": "turbo run build:app --continue --filter=@turbo-mobile-app/base-app",
+    "start:toutiao": "turbo run dev:mp-toutiao --continue --filter=@turbo-mobile-app/base-app",
+    "build:toutiao": "turbo run build:mp-toutiao --continue --filter=@turbo-mobile-app/base-app",
+    "start:kuaishou": "turbo run dev:mp-kuaishou --continue --filter=@turbo-mobile-app/base-app",
+    "build:kuaishou": "turbo run build:mp-kuaishou --continue --filter=@turbo-mobile-app/base-app",
+    "start:lark": "turbo run dev:mp-lark --continue --filter=@turbo-mobile-app/base-app",
+    "build:lark": "turbo run build:mp-lark --continue --filter=@turbo-mobile-app/base-app",
     "prepare": "husky"
   },
   "keywords": [],
-  "author": "",
+  "author": "Chen Wei Xian",
   "license": "MIT",
   "packageManager": "pnpm@8.11.0",
   "dependencies": {
@@ -40,7 +41,7 @@
     "typescript-eslint": "^7.4.0"
   },
   "engines": {
-    "node": ">=16",
+    "node": ">=16 <=18",
     "pnpm": ">=7"
   }
 }
