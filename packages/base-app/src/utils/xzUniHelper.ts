@@ -36,7 +36,7 @@ export class Router {
   }
 
   static back(delta: number = 1) {
-    Router.back(delta);
+    return uni.navigateBack({ delta });
   }
 
   static addSon(name: string, {

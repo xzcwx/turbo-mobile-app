@@ -15,15 +15,26 @@
     "current": 0,
     "list": []
   },
-	"pages": [
-		{
-			"path": "packages/main/pages/index/index",
-			"style": {
-				"navigationBarTitleText": "uni-app"
-			}
-		}
-	],
+  "pages": [
+    {
+      "path": "packages/main/pages/index/index",
+      "style": {
+        "navigationBarTitleText": "uni-app"
+      }
+    }
+  ],
   "subPackages": [
-
+    {
+      "root": "packages/sundry",
+      "name": "sundryPack",
+      "pages": [
+        {
+          "path": "pages/index/index",
+          "style": {
+            "navigationBarTitleText": "sundryPack"
+          }
+        }
+      ]
+    }
   ]
 }
