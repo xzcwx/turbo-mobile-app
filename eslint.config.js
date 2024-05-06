@@ -2,17 +2,24 @@ const globals = require("globals");
 const eslint = require("@eslint/js");
 const vue_eslint = require("eslint-plugin-vue");
 const ts_eslint = require("typescript-eslint");
+const prettier_eslint = require("eslint-config-prettier");
 
 module.exports = [
+  // flat/recommended: VUE3错误、意外行为、主观社区默认值规则
+  // flat/strongly-recommended: 大大提高代码可读性和/或开发体验的规则
+  // flat/essential: 防止错误或意外行为的基本规则
   eslint.configs.recommended,
+  prettier_eslint,
   ...ts_eslint.configs.recommended,
-  // VUE3错误、意外行为、主观社区默认值规则
   ...vue_eslint.configs["flat/recommended"],
   {
     languageOptions: {
       sourceType: "module",
       globals: {
         ...globals.node
+      },
+      parserOptions: {
+        parser: "@typescript-eslint/parser"
       }
     },
     rules: {
