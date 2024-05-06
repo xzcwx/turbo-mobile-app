@@ -5,11 +5,13 @@
 //如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
 //如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
 
+@import "@/scss/_xz-helper.scss";
+
 // 颜色变量 👇
 
 /* 主题颜色 */
-$primary-color: #675AFF;
-$dark-primary-color: #835CFF;
+$primary-color: #2894FF;
+$dark-primary-color: #0072E3;
 $shallow-primary-color: #84C1FF;
 
 /* 页面背景颜色 */
@@ -86,47 +88,3 @@ $mask-zindex: 1999;
 /* 卡片 */
 $cell-radius: 12px;
 $cell-bgc: #FFF;
-
-// 页面安全容器
-@mixin container($bgc: #FCFCFC, $around: 30upx, $bottom: 40upx, $padding: true, $safeBottom: true, $minHeight: 92vh) {
-  box-sizing: border-box;
-
-  @if $bgc {
-    background-color: $bgc;
-  }
-
-  @if padding {
-    padding: $around $around $bottom;
-  }
-
-  @if $safeBottom {
-    padding-bottom: calc(#{$bottom} + env(safe-area-inset-bottom, 0));
-  }
-
-  @if $minHeight {
-    min-height: calc($minHeight - var(--window-top));
-  }
-}
-
-// 文本溢出隐藏Mixin
-// $line: 指定第几行隐藏
-// $overflow: 溢出内容隐藏方式，默认ellipsis
-@mixin textHidden($line: 1, $overflow: ellipsis) {
-  overflow: hidden;
-  text-overflow: $overflow;
-  word-break: break-all;
-  display: -webkit-box;
-  -webkit-line-clamp: $line;
-  -webkit-box-orient: vertical;
-}
-
-// 隐藏滚动条
-@mixin hideScrollBar() {
-  @-moz-document url-prefix() {
-    scrollbar-width: thin;
-  }
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
