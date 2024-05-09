@@ -29,6 +29,10 @@
       "cache": false,
       "persistent": true
     },
+    "dev:mp-xhs": {
+      "cache": false,
+      "persistent": true
+    },
     "build:h5": {
       "cache": true,
       "dependsOn": ["build:h5"]
@@ -56,6 +60,10 @@
     "build:mp-lark": {
       "cache": true,
       "dependsOn": ["build:mp-lark"]
+    },
+    "build:mp-xhs": {
+      "cache": true,
+      "dependsOn": ["build:mp-xhs"]
     },
     "husky": {
       "cache": false

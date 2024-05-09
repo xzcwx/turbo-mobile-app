@@ -17,6 +17,8 @@
     "build:kuaishou": "turbo run build:mp-kuaishou --continue --filter=@turbo-mobile-app/base-app",
     "start:lark": "turbo run dev:mp-lark --continue --filter=@turbo-mobile-app/base-app",
     "build:lark": "turbo run build:mp-lark --continue --filter=@turbo-mobile-app/base-app",
+    "start:xhs": "turbo run dev:mp-xhs --continue --filter=@turbo-mobile-app/base-app",
+    "build:xhs": "turbo run build:mp-xhs --continue --filter=@turbo-mobile-app/base-app",
     "prepare": "husky"
   },
   "keywords": [],
