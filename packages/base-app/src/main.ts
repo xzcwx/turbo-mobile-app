@@ -9,8 +9,6 @@ import { Router } from "@/utils/xzUniHelper";
 
 /* Global Components Import Here */
 
-
-
 export function createApp() {
   const app = createSSRApp(App);
   const store = Pinia.createPinia();
@@ -19,7 +17,7 @@ export function createApp() {
   return { app, Pinia };
 }
 
-export function exec() {
+export function main() {
   // 路由子包配置
   for (const [name, base] of PACKAGE_MAP.entries()) {
     Router.addSon(name, { base });
@@ -27,4 +25,4 @@ export function exec() {
 }
 
 // 程序执行入口
-exec();
+main();

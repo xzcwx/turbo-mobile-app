@@ -60,9 +60,9 @@ function responseInterceptors(response: HttpResponse) {
   }
 
   // 服务端自定义错误状态码处理
-  if (data.code && !data.success && Number(data.code) !== 200) {
-    responseError({ ...response, statusCode: Number(data.code) });
-  }
+  // if (data.code && !data.success && Number(data.code) !== 200) {
+  //   responseError({ ...response, statusCode: Number(data.code) });
+  // }
   return data;
 }
 
