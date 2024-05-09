@@ -34,36 +34,28 @@
       "persistent": true
     },
     "build:h5": {
-      "cache": true,
-      "dependsOn": ["build:h5"]
+      "cache": true
     },
     "build:app": {
-      "cache": true,
-      "dependsOn": ["build:app"]
+      "cache": true
     },
     "build:mp-weixin": {
-      "cache": true,
-      "dependsOn": ["build:mp-weixin"]
+      "cache": true
     },
     "build:mp-alipay": {
-      "cache": true,
-      "dependsOn": ["build:mp-alipay"]
+      "cache": true
     },
     "build:mp-toutiao": {
-      "cache": true,
-      "dependsOn": ["build:mp-toutiao"]
+      "cache": true
     },
     "build:mp-kuaishou": {
-      "cache": true,
-      "dependsOn": ["build:mp-kuaishou"]
+      "cache": true
     },
     "build:mp-lark": {
-      "cache": true,
-      "dependsOn": ["build:mp-lark"]
+      "cache": true
     },
     "build:mp-xhs": {
-      "cache": true,
-      "dependsOn": ["build:mp-xhs"]
+      "cache": true
     },
     "husky": {
       "cache": false

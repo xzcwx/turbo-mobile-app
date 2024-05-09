@@ -1,5 +1,6 @@
 import LRequest from "luch-request";
-import type { HttpRequestConfig, HttpResponse } from "luch-request";
+import { enableErrorToast, statusCodeMsg } from "@/config/http";
+import type { HttpRequestConfig, HttpResponse, HttpError } from "luch-request";
 // @ts-ignore
 import {
   debuggerEnabled,
@@ -15,33 +16,31 @@ const http = new LRequest({
 });
 
 function requestInterceptors(config: HttpRequestConfig) {
-  const { header, custom: { unLoading } = {} } = config;
+  const { header, custom: { loadingToast = true } = {} } = config;
   // ToKen 处理
   const { token } = uni.getStorageSync("_user_info") ?? {};
 
   header!.Authorization = token;
 
-  if (!unLoading) {
-    uni.showLoading({
-      mask: true,
-      title: "加载中~"
-    });
-  }
-
+  loadingToast && uni.showLoading({
+    mask: true,
+    title: "加载中~"
+  });
   return config;
 }
 
 function responseInterceptors(response: HttpResponse) {
   const {
-    data,
     statusCode,
+    data = {},
     config: { url, method }
   } = response;
 
+  uni.hideLoading();
   console?.groupCollapsed?.(`api: ${response.config.url}`);
-  console?.debuglog(`api: ${response.config.url}`);
-  console?.debuglog(`data: ${response.config?.data}`);
-  console?.debuglog(response);
+  console?.log(`api: ${response.config.url}`);
+  console?.log(`data: ${response.config?.data}`);
+  console?.log(response);
   console?.groupEnd?.();
 
   /* debug调试工具配置 */
@@ -60,17 +59,47 @@ function responseInterceptors(response: HttpResponse) {
     );
   }
 
-  switch (statusCode) {
-    case 200:
-      break;
-    default:
-    // TODO 状态码额外处理
+  // 服务端自定义错误状态码处理
+  if (data.code && !data.success && Number(data.code) !== 200) {
+    responseError({ ...response, statusCode: Number(data.code) });
   }
-
   return data;
 }
 
-function responseError() {}
+function responseError(response: HttpError) {
+  const {
+    data, statusCode,
+    config: {
+      url, method,
+      custom: { toast = true, rasie = true } = {}
+    }
+  } = response;
+  const { msg, message } = data ?? {};
+
+  uni.hideLoading();
+  // 错误信息提示
+  if (msg || message || (statusCode && statusCodeMsg.has(statusCode))) {
+    enableErrorToast && toast && uni.showToast({
+      title: message || msg || statusCodeMsg.get(statusCode!),
+      icon: "none",
+      mask: true
+    });
+  }
+  switch (statusCode) {
+    case 401:
+      // 401 状态码特殊处理，可做登录页重定向操作
+      break;
+    case 404:
+      // 404 状态码特殊处理
+      break;
+    default:
+      // 状态码额外处理
+      if (rasie) {
+        throw new Error(`xzTips: HTTP请求异常，状态码: ${statusCode}, 请求地址: ${url}`);
+      }
+  }
+
+}
 
 http.interceptors.request.use(requestInterceptors);
 

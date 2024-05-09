@@ -16,7 +16,8 @@ module.exports = [
     languageOptions: {
       sourceType: "module",
       globals: {
-        ...globals.node
+        ...globals.node,
+        UnknownObject: "readonly"
       },
       parserOptions: {
         parser: "@typescript-eslint/parser"
@@ -27,6 +28,10 @@ module.exports = [
       "vue/custom-event-name-casing": "off",
       "vue/no-reserved-component-names": "off",
       "vue/multi-word-component-names": "off",
+      "vue/first-attribute-linebreak": "off",
+      "vue/max-attributes-per-line": "off",
+      "vue/html-closing-bracket-newline": "off",
+      "vue/singleline-html-element-content-newline": "off",
       "no-use-before-define": "off",
       "no-useless-escape": "off",
       "space-before-function-paren": "off",

@@ -17,7 +17,7 @@ import type {
 
 // 路由辅助类
 export class Router {
-  static son: { [name: string]: Router } = {};
+  static son: { [name: string]: typeof Router } = {};
 
   static push(url: string, { query, replace = false }: RouterPush = {}) {
     const turl = jointUrl({ url, query });
